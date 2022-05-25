@@ -26,6 +26,7 @@ btn = QPushButton(window)
 # 图标设置
 icon = QIcon("123_.png")
 btn.setIcon(icon)
+btn.setText("1")
 
 size = QSize(50, 50)
 btn.setIconSize(size)
@@ -35,12 +36,24 @@ btn.setIconSize(size)
 
 # 快捷键的设定
 
-btn.pressed.connect(lambda: print("按钮被点击了！"))
+def plus_one():
+    print("加1")
+    num = int(btn.text()) + 1
 
-btn.setShortcut("Alt+a")
+    btn.setText(str(num))
+
+btn.pressed.connect(plus_one)
+
+# btn.pressed.connect(lambda: print("按钮被点击了！"))
+# btn.setShortcut("Alt+a")
 
 # 自动重复
-
+btn.setAutoRepeat(True)
+btn.setAutoRepeatDelay(2000)  # 点击自动重复延迟时间
+btn.setAutoRepeatInterval(1000)  # 点击自动重复间隔时间
+# print(btn.autoRepeat())
+# print(btn.autoRepeatInterval())
+# print(btn.autoRepeatDelay())
 
 # 2.3 展示控件
 window.show()
