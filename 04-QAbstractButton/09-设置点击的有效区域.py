@@ -35,7 +35,18 @@ class Btn(QPushButton):
         yuanxin_x = self.width() / 2
         yuanxin_y = self.height() / 2
 
+        hit_x = point.x()
+        hit_y = point.y()
 
+        # (x1 - x2)平方 + (y1 - y2)平方
+        import math
+        distance = math.sqrt(math.pow(hit_x - yuanxin_x, 2) + math.pow(hit_y - yuanxin_y, 2))
+        print(distance)
+
+        if distance < self.width() / 2:
+            return True
+
+        return False
 
 
 btn = Btn(window)
