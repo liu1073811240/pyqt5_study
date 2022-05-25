@@ -25,8 +25,11 @@ btn.pressed.connect(lambda: print("点击了这个按钮"))
 btn2 = QPushButton(window)
 btn2.setText("按钮2")
 
+
 def test1():
-    btn.click()
+    # btn.click()
+    btn.animateClick(2000)  # 动画点击
+
 
 btn2.pressed.connect(test1)
 
