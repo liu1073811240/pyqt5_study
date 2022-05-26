@@ -1,3 +1,9 @@
+# -- coding: utf-8 --
+# @Time : 2022/5/26 14:30
+# @Author : Liu Hui
+# @Email : 1073811240@qq.com
+# @File : 01-构造函数.py
+# @Software: PyCharm
 
 # qtt
 # 0. 导入需要的包和模块
@@ -12,8 +18,15 @@ app = QApplication(sys.argv)
 window = QWidget()
 
 # 2.2 设置控件
-window.setWindowTitle("功能")
+window.setWindowTitle("按钮的功能")
 window.resize(500, 500)
+
+btn = QPushButton(QIcon("123_.png"), 'xxx', window)
+# btn.setParent(window)
+# btn.setText('xxx')
+# btn.setIcon(QIcon("123_.png"))
+
+btn.show()
 
 # 2.3 展示控件
 window.show()

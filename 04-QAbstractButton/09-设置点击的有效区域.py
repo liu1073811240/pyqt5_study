@@ -7,7 +7,7 @@
 
 # qtt
 # 0. 导入需要的包和模块
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtGui
 from PyQt5.Qt import *
 import sys
 
@@ -48,12 +48,25 @@ class Btn(QPushButton):
 
         return False
 
+    def paintEvent(self, evt):
+        super().paintEvent(evt)
+        painter = QPainter(self)
+        painter.setPen(QPen(QColor(100, 150, 200), 6))
+
+        painter.drawEllipse(self.rect())
+
 
 btn = Btn(window)
 btn.move(100, 100)
 btn.setText("点击")
 btn.resize(200, 200)
-btn.pressed.connect(lambda: print("按钮被点击了！"))
+# btn.setCheckable(True)
+# btn.pressed.connect(lambda: print("按钮被按下了！"))
+# btn.released.connect(lambda: print("按钮鼠标被释放！"))
+
+# btn.clicked.connect(lambda value: print("按钮被点击！", value))
+
+btn.toggled.connect(lambda value: print("按钮选中状态发生了改变", value))
 
 # 2.3 展示控件
 window.show()
