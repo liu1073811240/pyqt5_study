@@ -24,7 +24,7 @@ window.resize(500, 500)
 btn = QPushButton(QIcon("123_.png"), 'xxx', window)
 # btn.setParent(window)
 # btn.setText('xxx')
-# btn.setIcon(QIcon("123_.png"))
+# btn.setIcon(QIcon("xxx.png"))
 
 btn.show()
 

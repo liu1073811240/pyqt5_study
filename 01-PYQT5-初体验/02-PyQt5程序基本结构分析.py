@@ -21,7 +21,7 @@ window = QWidget()
 
 # 2.2 设置控件
 # window.setText("hello sz")
-window.setWindowTitle("社会顺哥")
+window.setWindowTitle("基本结构分析")
 window.resize(400, 400)
 
 # 控件也可以作为一个容器（承载其它的控件）

@@ -26,7 +26,7 @@ class Window(QWidget):
         # 行为动作 新建 打开 分割线 退出
         # new_action = QAction()
         # new_action.setText("新建")
-        # new_action.setIcon(QIcon("123_.png"))
+        # new_action.setIcon(QIcon("xxx.png"))
         new_action = QAction(QIcon("123_.png"), "新建", menu)
         new_action.triggered.connect(lambda: print("新建文件"))  # 新动作被点击触发 槽函数
 
@@ -67,7 +67,7 @@ window.resize(500, 500)
 btn = QPushButton(QIcon("123_.png"), '菜单', window)
 # btn.setParent(window)
 # btn.setText('xxx')
-# btn.setIcon(QIcon("123_.png"))
+# btn.setIcon(QIcon("xxx.png"))
 
 # 菜单的设置
 menu = QMenu()
@@ -80,7 +80,7 @@ open_recent_menu.setTitle("最近打开")
 # 行为动作 新建 打开 分割线 退出
 # new_action = QAction()
 # new_action.setText("新建")
-# new_action.setIcon(QIcon("123_.png"))
+# new_action.setIcon(QIcon("xxx.png"))
 new_action = QAction(QIcon("123_.png"), "新建", menu)
 new_action.triggered.connect(lambda: print("新建文件"))  # 新动作被点击触发 槽函数
 
@@ -132,7 +132,7 @@ def show_menu(point):
     # 行为动作 新建 打开 分割线 退出
     # new_action = QAction()
     # new_action.setText("新建")
-    # new_action.setIcon(QIcon("123_.png"))
+    # new_action.setIcon(QIcon("xxx.png"))
     new_action = QAction(QIcon("123_.png"), "新建", menu)
     new_action.triggered.connect(lambda: print("新建文件"))  # 新动作被点击触发 槽函数
 

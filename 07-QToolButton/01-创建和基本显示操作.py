@@ -22,10 +22,16 @@ window.setWindowTitle("QToolButton的使用")
 window.resize(500, 500)
 
 tb = QToolButton(window)  # 只显示图标、不显示文字
-# tb.setText("工具")
+tb.setText("工具")
 tb.setIcon(QIcon("123_.png"))
 tb.setIconSize(QSize(60, 60))
 tb.setToolTip("这是一个新建按钮")
+
+# tb.setToolButtonStyle(Qt.ToolButtonIconOnly)  # 只显示图标
+# tb.setToolButtonStyle(Qt.ToolButtonTextOnly)  # 只显示图标
+# tb.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)  # 显示文本在图标的旁边
+tb.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)  # 文本在图标下方
+
 
 # 2.3 展示控件
 window.show()
