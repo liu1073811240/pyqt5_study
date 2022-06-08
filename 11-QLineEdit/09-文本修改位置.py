@@ -42,14 +42,16 @@ copy_btn.move(100, 400)
 
 def copy_cao():
     # 1. 获取文本框a、内容
-    content = le_a.text()
+    # content = le_a.text()
 
     # 2. 把上面获取到的内容，设置到文本框B里面
     # le_b.setText(content)
-    le_b.setText("")
-    le_b.insert(content)
+    # le_b.setText("")
+    # le_b.insert(content)
     # print(le_b.text())
     # print(le_b.displayText())
+    print(le_b.isModified())  # 文本编辑框是否被修改过
+    le_b.setModified(False)  # 设置文本修改状态
 
 copy_btn.clicked.connect(copy_cao)
 
@@ -58,18 +60,18 @@ le_a.setMaxLength(3)
 print(le_a.maxLength())
 
 le_a.setReadOnly(True)  # 设置编辑框为只读模式
-le_a.setText("王炸，要不起")
+# le_a.setText("王炸，要不起")
+
+# le_b 设置掩码
+# 总共输入5位  左边2(必须是大写字母)  - 右边2位（必须有一位是数字）
+# le_b.setInputMask(">AA-9A")
+
+# le_b.setInputMask(">AA-99;#")  # 默认初始值为#号
+# le_b.setInputMask("9999-9999999;0")
 
 # 2.3 展示控件
 window.show()
 
 # 3. 应用程序的执行，进入到消息循环。
 sys.exit(app.exec_())
-
-
-
-
-
-
-
 

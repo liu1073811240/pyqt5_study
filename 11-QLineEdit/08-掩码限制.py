@@ -58,7 +58,14 @@ le_a.setMaxLength(3)
 print(le_a.maxLength())
 
 le_a.setReadOnly(True)  # 设置编辑框为只读模式
-le_a.setText("王炸，要不起")
+# le_a.setText("王炸，要不起")
+
+# le_b 设置掩码
+# 总共输入5位  左边2(必须是大写字母)  - 右边2位（必须有一位是数字）
+# le_b.setInputMask(">AA-9A")
+
+# le_b.setInputMask(">AA-99;#")  # 默认初始值为#号
+le_b.setInputMask("9999-9999999;0")
 
 # 2.3 展示控件
 window.show()
