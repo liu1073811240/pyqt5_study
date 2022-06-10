@@ -2,7 +2,7 @@
 # @Time : 2022/5/31 14:33
 # @Author : Liu Hui
 # @Email : 1073811240@qq.com
-# @File : 01-功能测试.py
+# @File : 01-QTextEdit.py
 # @Software: PyCharm
 
 
