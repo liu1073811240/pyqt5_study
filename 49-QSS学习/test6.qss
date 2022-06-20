@@ -1,0 +1,11 @@
+.QLabel[notice_level] {
+    background-color: pink;
+}
+
+.QLabel[notice_level='error'] {
+    border: 3px solid red;
+}
+
+.QLabel[notice_level='warning'] {
+    border: 3px solid yellow;
+}
