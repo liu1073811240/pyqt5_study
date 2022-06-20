@@ -26,22 +26,25 @@ class Window(QWidget):
         self.setup_ui()
 
     def setup_ui(self):
+        self.setStyleSheet("""
+            QPushButton {
+                background-image: url(333_.png);
+                border: 20px double red;
+                background-origin: content;
+                background-clip: padding;
+            }
+                
+        """)
+
         for i in range(0, 13):
             btn = QPushButton(self)
-            btn.resize(86, 108)
+            btn.resize(90, 106)
             btn.setStyleSheet("""
                 QPushButton {
-                    background-image: url(333_.png);
-                    border: 20px double red;
-                    background-origin: content;
-                    background-clip: padding;
-                    
-                    padding-left: -100px;
-                    padding-top: -136px;
-                    
+                    padding-left: -%dpx;
+                    padding-top: -%dpx;
                 }
-            
-            """)
+            """ % (i * 50, 0))
 
 
 if __name__ == '__main__':
