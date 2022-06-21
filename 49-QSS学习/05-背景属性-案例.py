@@ -33,18 +33,21 @@ class Window(QWidget):
                 background-origin: content;
                 background-clip: padding;
             }
-                
         """)
+
+        h_layout = QHBoxLayout(self)
 
         for i in range(0, 13):
             btn = QPushButton(self)
-            btn.resize(90, 106)
+            # btn.resize(90, 106)
+            btn.setFixedSize(90, 106)
             btn.setStyleSheet("""
                 QPushButton {
                     padding-left: -%dpx;
                     padding-top: -%dpx;
                 }
-            """ % (i * 50, 0))
+            """ % (i * 49, 0))
+            h_layout.addWidget(btn)
 
 
 if __name__ == '__main__':
