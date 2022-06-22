@@ -44,6 +44,7 @@ class Window(QWidget):
             
             }
             
+            
         """)
 
         # background-origin: content  参照内容矩形。
