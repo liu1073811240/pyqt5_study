@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\Documents\PyProjects\2022-05-05-pyqt5_study\05-QTDesigner\login.ui'
+# Form implementation generated from reading ui file 'login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -37,7 +37,7 @@ class Ui_Dialog(object):
         self.label_2.setBuddy(self.lineEdit_2)
 
         self.retranslateUi(Dialog)
-        self.pushButton.clicked.connect(Dialog.check_login)
+        self.pushButton.clicked.connect(self.clicked)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
@@ -49,19 +49,15 @@ class Ui_Dialog(object):
         self.lineEdit_2.setText(_translate("Dialog", "456"))
         self.pushButton.setText(_translate("Dialog", "登录"))
 
+    def clicked(self):
+        print("按钮被点击了")
 import test_source_rc
+
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
-
-    def dianji():
-        print("按钮点击了")
-
-    # Dialog.check_login = lambda : print("按钮点击了")
-    Dialog.check_login = dianji
-
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
     Dialog.show()

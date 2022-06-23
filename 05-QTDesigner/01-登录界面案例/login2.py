@@ -43,11 +43,27 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-
         self.label.setText(_translate("Dialog", "账号(&A)"))
         self.label_2.setText(_translate("Dialog", "密码(&P)"))
         self.lineEdit.setText(_translate("Dialog", "123"))
         self.lineEdit_2.setText(_translate("Dialog", "456"))
         self.pushButton.setText(_translate("Dialog", "登录"))
 
+
 import test_source_rc
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+
+    def dianji():
+        print("按钮点击了")
+
+    # Dialog.check_login = lambda : print("按钮点击了")
+    Dialog.check_login = dianji
+
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
