@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix=" liaoke">
+    <file>lock.png</file>
+  </qresource>
+  <qresource prefix="liaoke2">
+    <file>fengjing.jpg</file>
+  </qresource>
+</RCC>

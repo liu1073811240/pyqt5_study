@@ -28,6 +28,7 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.pushButton.setText(_translate("Form", "PushButton"))
 
+
 from custom_widget import Btn
 
 

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="lk">
+    <file>fengjing.jpg</file>
+    <file>lock.png</file>
+  </qresource>
+</RCC>
