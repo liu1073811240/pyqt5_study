@@ -189,6 +189,11 @@ class Ui_Form(object):
                                       "")
         self.pushButton.setObjectName("pushButton")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.SpanningRole, self.pushButton)
+        self.exit_menu_btn.raise_()
+        self.reset_menu_btn.raise_()
+        self.about_menu_btn.raise_()
+        self.layoutWidget.raise_()
+        self.main_menu_btn.raise_()
 
         self.retranslateUi(Form)
         self.main_menu_btn.clicked['bool'].connect(Form.show_hide_menu)

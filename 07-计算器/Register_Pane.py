@@ -15,12 +15,41 @@ class Window(QWidget, Ui_Form):
     def __init__(self):
         super(Window, self).__init__()
         self.setAttribute(Qt.WA_StyledBackground, True)  # 设置背景属性风格，让背景图片能够正常显示出来。
-
         self.setupUi(self)
 
+        self.animation_targets = [self.about_menu_btn, self.reset_menu_btn, self.exit_menu_btn]
+        self.animation_targets_pos = [target.pos() for target in self.animation_targets]
 
     def show_hide_menu(self, checked):
         print("显示和隐藏", checked)
+
+        animation_group = QSequentialAnimationGroup(self)  # 序列动画组
+        for idx, target in enumerate(self.animation_targets):
+            animation = QPropertyAnimation()
+            animation.setTargetObject(target)  # 动画设置目标对象
+            animation.setPropertyName(b"pos")
+
+            animation.setStartValue(self.main_menu_btn.pos())
+            animation.setEndValue(self.animation_targets_pos[idx])
+            # if not checked:
+            #     animation.setStartValue(self.main_menu_btn.pos())
+            #     animation.setEndValue(self.animation_targets_pos[idx])
+            # else:
+            #     animation.setEndValue(self.main_menu_btn.pos())
+            #     animation.setStartValue(self.animation_targets_pos[idx])
+
+            animation.setDuration(200)  # 设置动画时长
+            animation.setEasingCurve(QEasingCurve.InOutBounce)  # 设置动画变化（曲线）
+
+            animation_group.addAnimation(animation)  # 动画行为添加到动画组
+
+        # if not checked:
+        #     animation_group.setDirection(QAbstractAnimation.Forward)  # 控制动画方向
+        # else:
+        #     animation_group.setDirection(QAbstractAnimation.Backward)
+        animation_group.setDirection(checked)  # 根据布尔值 来决定动画方向
+
+        animation_group.start(QAbstractAnimation.DeleteWhenStopped)
 
     def about_lk(self):
         print("关于")
