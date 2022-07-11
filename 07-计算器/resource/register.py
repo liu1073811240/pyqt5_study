@@ -124,71 +124,80 @@ class Ui_Form(object):
                                  "font: 12pt \"方正舒体\";")
         self.label.setObjectName("label")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label)
-        self.lineEdit = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit.setMinimumSize(QtCore.QSize(0, 40))
-        self.lineEdit.setStyleSheet("background-color: transparent;\n"
-                                    "color: rgb(203, 207, 197);\n"
-                                    "border: none;\n"
-                                    "border-bottom: 1px solid lightgray;")
-        self.lineEdit.setText("")
-        self.lineEdit.setObjectName("lineEdit")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
+        self.account_le = QtWidgets.QLineEdit(self.layoutWidget)
+        self.account_le.setMinimumSize(QtCore.QSize(0, 40))
+        self.account_le.setStyleSheet("background-color: transparent;\n"
+                                      "color: rgb(203, 207, 197);\n"
+                                      "border: none;\n"
+                                      "border-bottom: 1px solid lightgray;")
+        self.account_le.setText("")
+        self.account_le.setClearButtonEnabled(True)
+        self.account_le.setObjectName("account_le")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.account_le)
         self.label_2 = QtWidgets.QLabel(self.layoutWidget)
         self.label_2.setStyleSheet("color: rgb(235, 231, 255);\n"
                                    "font: 12pt \"方正舒体\";")
         self.label_2.setObjectName("label_2")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_2)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_2.setMinimumSize(QtCore.QSize(0, 40))
-        self.lineEdit_2.setStyleSheet("background-color: transparent;\n"
-                                      "color: rgb(203, 207, 197);\n"
-                                      "border: none;\n"
-                                      "border-bottom: 1px solid lightgray;")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_2)
+        self.password_le = QtWidgets.QLineEdit(self.layoutWidget)
+        self.password_le.setMinimumSize(QtCore.QSize(0, 40))
+        self.password_le.setStyleSheet("background-color: transparent;\n"
+                                       "color: rgb(203, 207, 197);\n"
+                                       "border: none;\n"
+                                       "border-bottom: 1px solid lightgray;")
+        self.password_le.setClearButtonEnabled(True)
+        self.password_le.setObjectName("password_le")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.password_le)
         self.label_3 = QtWidgets.QLabel(self.layoutWidget)
         self.label_3.setStyleSheet("color: rgb(235, 231, 255);\n"
                                    "font: 12pt \"方正舒体\";")
         self.label_3.setObjectName("label_3")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_3)
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_3.setMinimumSize(QtCore.QSize(0, 40))
-        self.lineEdit_3.setStyleSheet("background-color: transparent;\n"
-                                      "color: rgb(203, 207, 197);\n"
-                                      "border: none;\n"
-                                      "border-bottom: 1px solid lightgray;")
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_3)
-        self.pushButton = QtWidgets.QPushButton(self.layoutWidget)
+        self.confirm_pwd_le = QtWidgets.QLineEdit(self.layoutWidget)
+        self.confirm_pwd_le.setMinimumSize(QtCore.QSize(0, 40))
+        self.confirm_pwd_le.setStyleSheet("background-color: transparent;\n"
+                                          "color: rgb(203, 207, 197);\n"
+                                          "border: none;\n"
+                                          "border-bottom: 1px solid lightgray;")
+        self.confirm_pwd_le.setClearButtonEnabled(True)
+        self.confirm_pwd_le.setObjectName("confirm_pwd_le")
+        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.confirm_pwd_le)
+        self.register_btn = QtWidgets.QPushButton(self.layoutWidget)
+        self.register_btn.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
-        self.pushButton.setSizePolicy(sizePolicy)
-        self.pushButton.setMinimumSize(QtCore.QSize(0, 40))
-        self.pushButton.setStyleSheet("QPushButton {\n"
-                                      "    \n"
-                                      "    background-color: rgb(120, 161, 255);\n"
-                                      "    color: rgb(50, 103, 197);\n"
-                                      "    border-radius: 10px;\n"
-                                      "    \n"
-                                      "    \n"
-                                      "}\n"
-                                      "\n"
-                                      "QPushButton:hover {\n"
-                                      "    background-color: rgb(174, 178, 255);\n"
-                                      "}\n"
-                                      "\n"
-                                      "QPushButton:pressed {\n"
-                                      "    \n"
-                                      "    background-color: rgb(93, 117, 255);\n"
-                                      "}\n"
-                                      "\n"
-                                      "\n"
-                                      "\n"
-                                      "")
-        self.pushButton.setObjectName("pushButton")
-        self.formLayout.setWidget(3, QtWidgets.QFormLayout.SpanningRole, self.pushButton)
+        sizePolicy.setHeightForWidth(self.register_btn.sizePolicy().hasHeightForWidth())
+        self.register_btn.setSizePolicy(sizePolicy)
+        self.register_btn.setMinimumSize(QtCore.QSize(0, 40))
+        self.register_btn.setStyleSheet("QPushButton {\n"
+                                        "    \n"
+                                        "    background-color: rgb(120, 161, 255);\n"
+                                        "    color: rgb(50, 103, 197);\n"
+                                        "    border-radius: 10px;\n"
+                                        "    \n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:disabled {\n"
+                                        "    \n"
+                                        "    background-color: rgb(202, 202, 202)\n"
+                                        "    \n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:hover {\n"
+                                        "    background-color: rgb(174, 178, 255);\n"
+                                        "}\n"
+                                        "\n"
+                                        "QPushButton:pressed {\n"
+                                        "    \n"
+                                        "    background-color: rgb(93, 117, 255);\n"
+                                        "}\n"
+                                        "\n"
+                                        "\n"
+                                        "\n"
+                                        "")
+        self.register_btn.setObjectName("register_btn")
+        self.formLayout.setWidget(3, QtWidgets.QFormLayout.SpanningRole, self.register_btn)
         self.exit_menu_btn.raise_()
         self.reset_menu_btn.raise_()
         self.about_menu_btn.raise_()
@@ -200,7 +209,11 @@ class Ui_Form(object):
         self.about_menu_btn.clicked.connect(Form.about_lk)
         self.reset_menu_btn.clicked.connect(Form.reset)
         self.exit_menu_btn.clicked.connect(Form.exit_pane)
-        self.pushButton.clicked.connect(Form.check_register)
+        self.register_btn.clicked.connect(Form.check_register)
+
+        self.account_le.textChanged['QString'].connect(Form.enable_register_btn)
+        self.password_le.textChanged['QString'].connect(Form.enable_register_btn)
+        self.confirm_pwd_le.textChanged['QString'].connect(Form.enable_register_btn)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -213,7 +226,7 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "账        号："))
         self.label_2.setText(_translate("Form", "密       码："))
         self.label_3.setText(_translate("Form", "确认密码："))
-        self.pushButton.setText(_translate("Form", "注册"))
+        self.register_btn.setText(_translate("Form", "注册"))
 
 
 import images_rc
