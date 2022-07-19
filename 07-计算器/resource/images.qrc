@@ -2,4 +2,14 @@
   <qresource prefix="register">
     <file>images/register_background.webp</file>
   </qresource>
+  <qresource prefix="login">
+    <file>images/star.gif</file>
+    <file>images/login_background.webp</file>
+    <file>images/login_btn_icon.png</file>
+    <file>images/login_combobox.png</file>
+    <file>images/login_item_icon1.jpeg</file>
+    <file>images/login_item_icon2.jpeg</file>
+    <file>images/login_qrcode.png</file>
+    <file>images/login_tog_bg.gif</file>
+  </qresource>
 </RCC>

@@ -10,7 +10,6 @@ from PyQt5.Qt import *
 from resource.register import Ui_Form
 
 # qto
-
 class RegisterPane(QWidget, Ui_Form):
 
     exit_signal = pyqtSignal()  # 定义结束信号。
@@ -86,6 +85,7 @@ class RegisterPane(QWidget, Ui_Form):
         else:
             self.register_btn.setEnabled(False)
 
+import images_rc
 
 if __name__ == '__main__':
     import sys
@@ -93,6 +93,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     window = RegisterPane()
+
     window.exit_signal.connect(lambda: print("退出"))
     window.register_account_pwd_signal.connect(lambda a, p: print(a, p))
 
