@@ -15,8 +15,8 @@ class RegisterPane(QWidget, Ui_Form):
     exit_signal = pyqtSignal()  # 定义结束信号。
     register_account_pwd_signal = pyqtSignal(str, str)  # 定义注册账户密码信号
 
-    def __init__(self):
-        super(RegisterPane, self).__init__()
+    def __init__(self, parent=None, *args, **kwargs):
+        super(RegisterPane, self).__init__(parent, *args, **kwargs)
         self.setAttribute(Qt.WA_StyledBackground, True)  # 设置背景属性风格，让背景图片能够正常显示出来。
         self.setupUi(self)
 

@@ -213,6 +213,7 @@ class Ui_Form(object):
         self.verticalLayout.setStretch(1, 3)
 
         self.retranslateUi(Form)
+        self.pushButton.clicked.connect(Form.show_register_pane)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -224,7 +225,9 @@ class Ui_Form(object):
         self.checkBox.setText(_translate("Form", "自动登录"))
         self.checkBox_2.setText(_translate("Form", "记住密码"))
         self.pushButton_3.setText(_translate("Form", "安全登录"))
+
 import images_rc
+
 
 if __name__ == "__main__":
     import sys

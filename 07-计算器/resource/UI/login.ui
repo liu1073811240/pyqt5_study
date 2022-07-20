@@ -354,5 +354,25 @@ QPushButton QAbstractItemView:item {
  <resources>
   <include location="../images.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>show_register_pane()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>419</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-5</x>
+     <y>368</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>show_register_pane()</slot>
+ </slots>
 </ui>

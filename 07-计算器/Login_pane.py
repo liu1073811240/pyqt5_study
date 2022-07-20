@@ -12,11 +12,10 @@ from resource.login import Ui_Form
 # qto
 class LoginPane(QWidget, Ui_Form):
 
-    # exit_signal = pyqtSignal()  # 定义结束信号。
-    # register_account_pwd_signal = pyqtSignal(str, str)  # 定义注册账户密码信号
+    show_register_pane_signal = pyqtSignal()  # 展示注册面板信号。
 
-    def __init__(self):
-        super(LoginPane, self).__init__()
+    def __init__(self, parent=None, *args, **kwargs):
+        super(LoginPane, self).__init__(parent, *args, **kwargs)
         self.setAttribute(Qt.WA_StyledBackground, True)  # 设置背景属性风格，让背景图片能够正常显示出来。
         self.setupUi(self)
 
@@ -25,14 +24,14 @@ class LoginPane(QWidget, Ui_Form):
         self.login_top_bg_label.setMovie(movie)
         movie.start()
 
-
+    def show_register_pane(self):  # 转到注册界面。
+        self.show_register_pane_signal.emit()  # 发射要 展示注册面板信号。
 
 
 if __name__ == '__main__':
     import sys
 
     app = QApplication(sys.argv)
-
     window = LoginPane()
 
     # window.exit_signal.connect(lambda: print("退出"))
