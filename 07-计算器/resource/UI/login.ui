@@ -371,8 +371,25 @@ QPushButton QAbstractItemView:item {
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>open_qq_link()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>461</x>
+     <y>389</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>325</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>show_register_pane()</slot>
+  <slot>open_qq_link()</slot>
  </slots>
 </ui>

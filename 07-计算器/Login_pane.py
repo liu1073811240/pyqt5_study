@@ -27,6 +27,10 @@ class LoginPane(QWidget, Ui_Form):
     def show_register_pane(self):  # 转到注册界面。
         self.show_register_pane_signal.emit()  # 发射要 展示注册面板信号。
 
+    def open_qq_link(self):
+        link = "https://user.qzone.qq.com/1073811240?source=namecardhoverqzone"
+        QDesktopServices.openUrl(QUrl(link))
+
 
 if __name__ == '__main__':
     import sys

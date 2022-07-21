@@ -75,7 +75,7 @@ class RegisterPane(QWidget, Ui_Form):
         self.register_account_pwd_signal.emit(account_txt, password_txt)
 
     def enable_register_btn(self):
-        print("判定")
+        # print("判定")
         account_txt = self.account_le.text()
         password_txt = self.password_le.text()
         cp_txt = self.confirm_pwd_le.text()
