@@ -21,6 +21,7 @@ if __name__ == '__main__':
     register_pane.move(0, login_pane.height())
     register_pane.show()
 
+    # 槽函数
     def exit_register_pane():
         animation = QPropertyAnimation(register_pane)
         animation.setTargetObject(register_pane)
@@ -44,13 +45,13 @@ if __name__ == '__main__':
         animation.setEasingCurve(QEasingCurve.OutBounce)
         animation.start(QAbstractAnimation.DeleteWhenStopped)
 
-
+    # 信号的连接
     register_pane.exit_signal.connect(exit_register_pane)  # 发射信号： 注册页面退出 转为 登录页面
     register_pane.register_account_pwd_signal.connect(lambda account, pwd: print(account, pwd))
 
     login_pane.show_register_pane_signal.connect(show_register_pane)  # 发射信号： 登录页面 转为 注册页面
+    login_pane.check_login_signal.connect(lambda account, pwd: print(account, pwd))  # 登录面板
 
     login_pane.show()
 
     sys.exit(app.exec_())
-

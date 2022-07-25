@@ -50,9 +50,9 @@ class Ui_Form(object):
         self.widget_3.setObjectName("widget_3")
         self.gridLayout = QtWidgets.QGridLayout(self.widget_3)
         self.gridLayout.setObjectName("gridLayout")
-        self.comboBox = QtWidgets.QComboBox(self.widget_3)
-        self.comboBox.setMinimumSize(QtCore.QSize(0, 45))
-        self.comboBox.setStyleSheet("QComboBox {\n"
+        self.account_cb = QtWidgets.QComboBox(self.widget_3)
+        self.account_cb.setMinimumSize(QtCore.QSize(0, 45))
+        self.account_cb.setStyleSheet("QComboBox {\n"
 "    font-size: 20px;\n"
 "    border: none;\n"
 "    border-bottom: 1px solid lightgray;\n"
@@ -98,18 +98,18 @@ class Ui_Form(object):
 "\n"
 "\n"
 "")
-        self.comboBox.setEditable(True)
-        self.comboBox.setObjectName("comboBox")
+        self.account_cb.setEditable(True)
+        self.account_cb.setObjectName("account_cb")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/login/images/login_item_icon1.jpeg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.comboBox.addItem(icon, "")
+        self.account_cb.addItem(icon, "")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/login/images/login_item_icon2.jpeg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.comboBox.addItem(icon1, "")
-        self.gridLayout.addWidget(self.comboBox, 0, 0, 1, 2)
-        self.lineEdit = QtWidgets.QLineEdit(self.widget_3)
-        self.lineEdit.setMinimumSize(QtCore.QSize(0, 45))
-        self.lineEdit.setStyleSheet("QLineEdit {\n"
+        self.account_cb.addItem(icon1, "")
+        self.gridLayout.addWidget(self.account_cb, 0, 0, 1, 2)
+        self.pwd_le = QtWidgets.QLineEdit(self.widget_3)
+        self.pwd_le.setMinimumSize(QtCore.QSize(0, 45))
+        self.pwd_le.setStyleSheet("QLineEdit {\n"
 "    font-size: 20px;\n"
 "    border: none;\n"
 "    border-bottom: 1px solid lightgray;\n"
@@ -155,19 +155,20 @@ class Ui_Form(object):
 "\n"
 "\n"
 "")
-        self.lineEdit.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
-        self.lineEdit.setClearButtonEnabled(True)
-        self.lineEdit.setObjectName("lineEdit")
-        self.gridLayout.addWidget(self.lineEdit, 1, 0, 1, 2)
-        self.checkBox = QtWidgets.QCheckBox(self.widget_3)
-        self.checkBox.setObjectName("checkBox")
-        self.gridLayout.addWidget(self.checkBox, 2, 0, 1, 1)
-        self.checkBox_2 = QtWidgets.QCheckBox(self.widget_3)
-        self.checkBox_2.setObjectName("checkBox_2")
-        self.gridLayout.addWidget(self.checkBox_2, 2, 1, 1, 1, QtCore.Qt.AlignRight)
-        self.pushButton_3 = QtWidgets.QPushButton(self.widget_3)
-        self.pushButton_3.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_3.setStyleSheet("QPushButton {\n"
+        self.pwd_le.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
+        self.pwd_le.setClearButtonEnabled(True)
+        self.pwd_le.setObjectName("pwd_le")
+        self.gridLayout.addWidget(self.pwd_le, 1, 0, 1, 2)
+        self.auto_login_cb = QtWidgets.QCheckBox(self.widget_3)
+        self.auto_login_cb.setObjectName("auto_login_cb")
+        self.gridLayout.addWidget(self.auto_login_cb, 2, 0, 1, 1)
+        self.remember_pwd_cb = QtWidgets.QCheckBox(self.widget_3)
+        self.remember_pwd_cb.setObjectName("remember_pwd_cb")
+        self.gridLayout.addWidget(self.remember_pwd_cb, 2, 1, 1, 1, QtCore.Qt.AlignRight)
+        self.login_btn = QtWidgets.QPushButton(self.widget_3)
+        self.login_btn.setEnabled(False)
+        self.login_btn.setMinimumSize(QtCore.QSize(0, 50))
+        self.login_btn.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(33, 174, 250);\n"
 "    border-radius: 8px;\n"
 "    color: white;\n"
@@ -185,18 +186,20 @@ class Ui_Form(object):
 "\n"
 "}\n"
 "\n"
-"QPushButton QAbstractItemView:item {\n"
-"    color: lightblue;\n"
+"QPushButton:disabled {\n"
+"    background-color: ;\n"
+"    color: rgb(188, 195, 198);\n"
+"\n"
 "}\n"
 "\n"
 "\n"
 "")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/login/images/login_btn_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_3.setIcon(icon2)
-        self.pushButton_3.setIconSize(QtCore.QSize(30, 30))
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.gridLayout.addWidget(self.pushButton_3, 3, 0, 1, 2)
+        self.login_btn.setIcon(icon2)
+        self.login_btn.setIconSize(QtCore.QSize(30, 30))
+        self.login_btn.setObjectName("login_btn")
+        self.gridLayout.addWidget(self.login_btn, 3, 0, 1, 2)
         self.horizontalLayout.addWidget(self.widget_3)
         self.pushButton_2 = QtWidgets.QPushButton(self.widget_2)
         self.pushButton_2.setMinimumSize(QtCore.QSize(80, 80))
@@ -215,17 +218,22 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(Form.show_register_pane)
         self.pushButton_2.clicked.connect(Form.open_qq_link)
+        self.account_cb.editTextChanged['QString'].connect(Form.enable_login_btn)
+        self.pwd_le.textChanged['QString'].connect(Form.enable_login_btn)
+        self.login_btn.clicked.connect(Form.check_login)
+        self.auto_login_cb.clicked['bool'].connect(Form.auto_login)
+        self.remember_pwd_cb.clicked['bool'].connect(Form.remember_pwd)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.pushButton.setText(_translate("Form", "注册账号"))
-        self.comboBox.setItemText(0, _translate("Form", "1073811240"))
-        self.comboBox.setItemText(1, _translate("Form", "1548795632"))
-        self.checkBox.setText(_translate("Form", "自动登录"))
-        self.checkBox_2.setText(_translate("Form", "记住密码"))
-        self.pushButton_3.setText(_translate("Form", "安全登录"))
+        self.account_cb.setItemText(0, _translate("Form", "1073811240"))
+        self.account_cb.setItemText(1, _translate("Form", "1548795632"))
+        self.auto_login_cb.setText(_translate("Form", "自动登录"))
+        self.remember_pwd_cb.setText(_translate("Form", "记住密码"))
+        self.login_btn.setText(_translate("Form", "安全登录"))
 import images_rc
 
 

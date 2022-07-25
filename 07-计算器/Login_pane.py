@@ -13,6 +13,7 @@ from resource.login import Ui_Form
 class LoginPane(QWidget, Ui_Form):
 
     show_register_pane_signal = pyqtSignal()  # 展示注册面板信号。
+    check_login_signal = pyqtSignal(str, str)  # 检查登录按钮信号。
 
     def __init__(self, parent=None, *args, **kwargs):
         super(LoginPane, self).__init__(parent, *args, **kwargs)
@@ -30,6 +31,26 @@ class LoginPane(QWidget, Ui_Form):
     def open_qq_link(self):
         link = "https://user.qzone.qq.com/1073811240?source=namecardhoverqzone"
         QDesktopServices.openUrl(QUrl(link))
+
+    def enable_login_btn(self):
+        account = self.account_cb.currentText()
+        pwd = self.pwd_le.text()
+        # print(account, pwd)
+        if len(account) > 0 and len(pwd) > 0:
+            self.login_btn.setEnabled(True)
+        else:
+            self.login_btn.setEnabled(False)
+
+    def check_login(self):
+        account = self.account_cb.currentText()
+        pwd = self.pwd_le.text()
+        self.check_login_signal.emit(account, pwd)  # 发射信号出去。
+
+    def auto_login(self):
+        pass
+
+    def remember_pwd(self):
+        pass
 
 
 if __name__ == '__main__':
