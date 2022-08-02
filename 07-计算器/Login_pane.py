@@ -46,11 +46,28 @@ class LoginPane(QWidget, Ui_Form):
         pwd = self.pwd_le.text()
         self.check_login_signal.emit(account, pwd)  # 发射信号出去。
 
-    def auto_login(self):
-        pass
+    def auto_login(self, checked):
+        print("自动登录", checked)
+        if checked:
+            self.remember_pwd_cb.setChecked(True)
 
-    def remember_pwd(self):
-        pass
+    def remember_pwd(self, checked):
+        print("记住密码", checked)
+        if not checked:
+            self.auto_login_cb.setChecked(False)
+
+    def show_error_animation(self):
+        animation = QPropertyAnimation(self)
+        animation.setTargetObject(self.login_bottom)  # 设置登录界面下半部分控件、做错误抖动特效。
+        animation.setPropertyName(b"pos")
+        animation.setKeyValueAt(0, self.login_bottom.pos())
+        animation.setKeyValueAt(0.2, self.login_bottom.pos() + QPoint(15, 0))
+        animation.setKeyValueAt(0.5, self.login_bottom.pos())
+        animation.setKeyValueAt(0.7, self.login_bottom.pos() + QPoint(-15, 0))
+        animation.setKeyValueAt(1, self.login_bottom.pos())
+        animation.setDuration(200)
+        animation.setLoopCount(3)
+        animation.start(QAbstractAnimation.DeleteWhenStopped)
 
 
 if __name__ == '__main__':

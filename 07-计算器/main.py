@@ -45,12 +45,18 @@ if __name__ == '__main__':
         animation.setEasingCurve(QEasingCurve.OutBounce)
         animation.start(QAbstractAnimation.DeleteWhenStopped)
 
+    def check_login(account, pwd):
+        if account == '1073811240' and pwd == "123456":
+            print("登录成功")
+        else:
+            login_pane.show_error_animation()
+
     # 信号的连接
     register_pane.exit_signal.connect(exit_register_pane)  # 发射信号： 注册页面退出 转为 登录页面
     register_pane.register_account_pwd_signal.connect(lambda account, pwd: print(account, pwd))
 
     login_pane.show_register_pane_signal.connect(show_register_pane)  # 发射信号： 登录页面 转为 注册页面
-    login_pane.check_login_signal.connect(lambda account, pwd: print(account, pwd))  # 登录面板
+    login_pane.check_login_signal.connect(check_login)  # 登录面板
 
     login_pane.show()
 
