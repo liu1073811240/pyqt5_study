@@ -7,7 +7,7 @@
 
 from Login_pane import LoginPane
 from Register_Pane import RegisterPane
-
+from Caculator_Pane import CaculatorPane
 from PyQt5.Qt import *
 
 
@@ -20,6 +20,8 @@ if __name__ == '__main__':
     register_pane = RegisterPane(login_pane)  # 将登录面板作为 父控件、 注册面板作为子控件。
     register_pane.move(0, login_pane.height())
     register_pane.show()
+
+    caculator_pane = CaculatorPane()
 
     # 槽函数
     def exit_register_pane():
@@ -39,7 +41,8 @@ if __name__ == '__main__':
         animation = QPropertyAnimation(register_pane)
         animation.setTargetObject(register_pane)
         animation.setPropertyName(b"pos")
-        animation.setStartValue(register_pane.pos())
+        # animation.setStartValue(register_pane.pos())
+        animation.setStartValue(QPoint(0, login_pane.height()))
         animation.setEndValue(QPoint(0, 0))
         animation.setDuration(1000)
         animation.setEasingCurve(QEasingCurve.OutBounce)
@@ -48,6 +51,9 @@ if __name__ == '__main__':
     def check_login(account, pwd):
         if account == '1073811240' and pwd == "123456":
             print("登录成功")
+
+            caculator_pane.show()
+            login_pane.hide()
         else:
             login_pane.show_error_animation()
 
