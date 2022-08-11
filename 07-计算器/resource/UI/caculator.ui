@@ -28,6 +28,23 @@
        <height>50</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>Agency FB</family>
+       <pointsize>20</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>0.0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item row="1" column="0">
@@ -53,6 +70,9 @@
      <property name="bg" stdset="0">
       <string>lightgray</string>
      </property>
+     <property name="role" stdset="0">
+      <string>clear</string>
+     </property>
     </widget>
    </item>
    <item row="1" column="1">
@@ -71,6 +91,9 @@
      </property>
      <property name="bg" stdset="0">
       <string>lightgray</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>num</string>
      </property>
     </widget>
    </item>
@@ -91,6 +114,9 @@
      <property name="bg" stdset="0">
       <string>lightgray</string>
      </property>
+     <property name="role" stdset="0">
+      <string>num</string>
+     </property>
     </widget>
    </item>
    <item row="1" column="3">
@@ -100,6 +126,11 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Consolas</family>
+      </font>
      </property>
      <property name="text">
       <string>/</string>
@@ -112,6 +143,9 @@
      </property>
      <property name="bg" stdset="0">
       <string>orange</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>operator</string>
      </property>
     </widget>
    </item>
@@ -132,6 +166,9 @@
      <property name="bg" stdset="0">
       <string>gray</string>
      </property>
+     <property name="role" stdset="0">
+      <string>num</string>
+     </property>
     </widget>
    </item>
    <item row="2" column="1">
@@ -151,6 +188,9 @@
      <property name="bg" stdset="0">
       <string>gray</string>
      </property>
+     <property name="role" stdset="0">
+      <string>num</string>
+     </property>
     </widget>
    </item>
    <item row="2" column="2">
@@ -169,6 +209,9 @@
      </property>
      <property name="bg" stdset="0">
       <string>gray</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>num</string>
      </property>
     </widget>
    </item>
@@ -192,6 +235,9 @@
      <property name="bg" stdset="0">
       <string>orange</string>
      </property>
+     <property name="role" stdset="0">
+      <string>operator</string>
+     </property>
     </widget>
    </item>
    <item row="3" column="0">
@@ -210,6 +256,9 @@
      </property>
      <property name="bg" stdset="0">
       <string>gray</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>num</string>
      </property>
     </widget>
    </item>
@@ -230,6 +279,9 @@
      <property name="bg" stdset="0">
       <string>gray</string>
      </property>
+     <property name="role" stdset="0">
+      <string>num</string>
+     </property>
     </widget>
    </item>
    <item row="3" column="2">
@@ -248,6 +300,9 @@
      </property>
      <property name="bg" stdset="0">
       <string>gray</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>num</string>
      </property>
     </widget>
    </item>
@@ -271,6 +326,9 @@
      <property name="bg" stdset="0">
       <string>orange</string>
      </property>
+     <property name="role" stdset="0">
+      <string>operator</string>
+     </property>
     </widget>
    </item>
    <item row="4" column="0">
@@ -289,6 +347,9 @@
      </property>
      <property name="bg" stdset="0">
       <string>gray</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>num</string>
      </property>
     </widget>
    </item>
@@ -309,6 +370,9 @@
      <property name="bg" stdset="0">
       <string>gray</string>
      </property>
+     <property name="role" stdset="0">
+      <string>num</string>
+     </property>
     </widget>
    </item>
    <item row="4" column="2">
@@ -327,6 +391,9 @@
      </property>
      <property name="bg" stdset="0">
       <string>gray</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>num</string>
      </property>
     </widget>
    </item>
@@ -350,6 +417,9 @@
      <property name="bg" stdset="0">
       <string>orange</string>
      </property>
+     <property name="role" stdset="0">
+      <string>operator</string>
+     </property>
     </widget>
    </item>
    <item row="5" column="0" colspan="2">
@@ -368,6 +438,9 @@
      </property>
      <property name="bg" stdset="0">
       <string>gray</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>num</string>
      </property>
     </widget>
    </item>
@@ -388,6 +461,9 @@
      <property name="bg" stdset="0">
       <string>gray</string>
      </property>
+     <property name="role" stdset="0">
+      <string>num</string>
+     </property>
     </widget>
    </item>
    <item row="5" column="3">
@@ -401,11 +477,17 @@
      <property name="text">
       <string>=</string>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
      <property name="autoExclusive">
       <bool>true</bool>
      </property>
      <property name="bg" stdset="0">
-      <string>orange</string>
+      <string>equal</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>equal</string>
      </property>
     </widget>
    </item>
@@ -416,8 +498,319 @@
    <class>CalculatorBtn</class>
    <extends>QPushButton</extends>
    <header>Caculator_Btn</header>
+   <slots>
+    <signal>key_pressed()</signal>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>35</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-18</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>159</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-52</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-22</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>371</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>498</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_10</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>268</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_19</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>334</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>428</x>
+     <y>448</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_12</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-44</x>
+     <y>182</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-62</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_9</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>255</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-25</x>
+     <y>201</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>45</x>
+     <y>275</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-83</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>168</x>
+     <y>293</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-48</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>267</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-6</x>
+     <y>293</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_16</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>28</x>
+     <y>369</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-38</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_14</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>139</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-54</x>
+     <y>398</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_15</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-36</x>
+     <y>337</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_17</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>104</x>
+     <y>461</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-131</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_18</sender>
+   <signal>key_pressed()</signal>
+   <receiver>Form</receiver>
+   <slot>get_key()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>251</x>
+     <y>459</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>521</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>get_key()</slot>
+ </slots>
 </ui>
