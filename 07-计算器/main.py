@@ -67,3 +67,19 @@ if __name__ == '__main__':
     login_pane.show()
 
     sys.exit(app.exec_())
+
+
+'''
+打包计算器程序：
+安装pyinstaller: pip install pyinstaller
+查看pyinstaller版本： pyinstaller --version
+
+重新把项目放在一个新的路径，然后打包。
+
+打包命令
+1. pyinstaller main.py  # 会看到很多依赖包，可以自己添加缺少的文件。
+2. pyinstaller -F main.py  # 不会看到很多依赖包，只打包成一个exe文件
+3. pyinstaller -F -w main.py  # 只使用窗口，不显示命令窗口
+4. pyinstaller -F -c main.py  # 既使用窗口，也显示命令窗口。
+
+'''
